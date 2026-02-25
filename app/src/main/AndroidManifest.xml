@@ -103,6 +103,14 @@
             android:label="@string/api_configuration"
             android:parentActivityName=".ui.activities.SettingsActivity" />
 
+        <!-- Search Activity - Keyword Search -->
+        <activity
+            android:name=".ui.activities.SearchActivity"
+            android:exported="false"
+            android:label="@string/keyword_search"
+            android:parentActivityName=".ui.activities.MainActivity"
+            android:windowSoftInputMode="adjustResize" />
+
         <!-- =====================================================================
              File Provider - For sharing files
              ===================================================================== -->

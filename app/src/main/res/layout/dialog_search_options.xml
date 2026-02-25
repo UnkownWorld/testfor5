@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- 整词匹配 -->
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switchWholeWord"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/whole_word_match" />
+
+        <!-- 大小写敏感 -->
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switchCaseSensitive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/case_sensitive" />
+
+        <!-- 使用正则表达式 -->
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switchUseRegex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/use_regex" />
+
+        <!-- 递归搜索子文件夹 -->
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switchRecursive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/recursive_search"
+            android:checked="true" />
+
+        <!-- 并发搜索 -->
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switchConcurrent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/concurrent_search"
+            android:checked="true" />
+
+        <!-- 高亮关键词 -->
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switchHighlight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/highlight_keywords"
+            android:checked="true" />
+
+        <!-- 上下文句子数 -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/context_sentences"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputContextSentences"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- 最大线程数 -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/max_threads"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputMaxThreads"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text="4" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- 文件扩展名 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/file_extensions"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/extensions_hint"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputExtensions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:maxLines="3" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+</ScrollView>

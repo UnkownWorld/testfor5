@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <!-- 来源信息 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textFileName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:ellipsize="middle" />
+
+            <TextView
+                android:id="@+id/textLineNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- 匹配关键词 -->
+        <TextView
+            android:id="@+id/textKeywords"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="12sp" />
+
+        <!-- 上文 -->
+        <TextView
+            android:id="@+id/textContextBefore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="13sp"
+            android:alpha="0.7"
+            android:visibility="gone" />
+
+        <!-- 匹配句子 -->
+        <TextView
+            android:id="@+id/textMatchedSentence"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bg_message_assistant"
+            android:padding="8dp"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="14sp" />
+
+        <!-- 下文 -->
+        <TextView
+            android:id="@+id/textContextAfter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="13sp"
+            android:alpha="0.7"
+            android:visibility="gone" />
+
+        <!-- 文件路径 -->
+        <TextView
+            android:id="@+id/textFilePath"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="?android:attr/textColorTertiary"
+            android:textSize="11sp"
+            android:maxLines="1"
+            android:ellipsize="start" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
