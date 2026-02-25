@@ -304,4 +304,39 @@
     <string name="skill_folder_error">Failed to set skill folder</string>
     <string name="storage_permission_denied">Storage permission denied. Some features may not work.</string>
 
+    <!-- Keyword Search -->
+    <string name="keyword_search">Keyword Search</string>
+    <string name="keywords_hint">Enter keywords (comma, space separated)</string>
+    <string name="select_file">Select File</string>
+    <string name="select_folder">Select Folder</string>
+    <string name="search_options">Search Options</string>
+    <string name="search_history">Search History</string>
+    <string name="search_hint">Enter keywords to search file contents</string>
+    <string name="line_number">Line %d</string>
+    <string name="matched_keywords">Keywords: %s</string>
+    <string name="search_statistics">Processed %d files, found %d matches, took %dms</string>
+    <string name="please_input_keywords">Please enter keywords</string>
+    <string name="please_select_path">Please select file or folder</string>
+    <string name="no_files_found">No supported files found</string>
+    <string name="no_history">No search history</string>
+    <string name="history_cleared">History cleared</string>
+    <string name="options_saved">Options saved</string>
+    <string name="export">Export</string>
+    <string name="export_format">Export Format</string>
+    <string name="export_success">Export successful</string>
+    <string name="export_failed">Export failed</string>
+    <string name="exported_to">Exported to: %s</string>
+    <string name="no_results_to_export">No results to export</string>
+    <string name="copied">Copied</string>
+    <string name="whole_word_match">Whole word match</string>
+    <string name="case_sensitive">Case sensitive</string>
+    <string name="use_regex">Use regular expression</string>
+    <string name="recursive_search">Recursive search subfolders</string>
+    <string name="concurrent_search">Concurrent search</string>
+    <string name="highlight_keywords">Highlight keywords</string>
+    <string name="context_sentences">Context sentences</string>
+    <string name="max_threads">Max threads</string>
+    <string name="file_extensions">File extensions</string>
+    <string name="extensions_hint">Extensions, comma separated</string>
+
 </resources>

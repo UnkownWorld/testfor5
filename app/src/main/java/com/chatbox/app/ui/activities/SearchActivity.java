@@ -66,7 +66,7 @@ public class SearchActivity extends AppCompatActivity implements SearchResultAda
     
     private ActivityResultLauncher<String[]> filePickerLauncher;
     private ActivityResultLauncher<Uri> folderPickerLauncher;
-    private ActivityResultLauncher<Uri> exportFileLauncher;
+    private ActivityResultLauncher<String> exportFileLauncher;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
