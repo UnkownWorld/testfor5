@@ -1,0 +1,130 @@
+================================================================================
+                        聊天盒子 - 关键词检索功能
+                          APK打包说明文档
+================================================================================
+
+一、环境要求
+--------------------------------------------------------------------------------
+1. JDK 8 或更高版本
+2. Android SDK (API 34)
+3. Android Build Tools 34.0.0
+4. Gradle 8.0+ (项目自带gradlew)
+
+二、打包步骤
+--------------------------------------------------------------------------------
+
+【方式一】使用命令行打包（推荐）
+
+1. 打开终端，进入项目目录：
+   cd /path/to/testfor2
+
+2. 设置Android SDK路径（如果未设置）：
+   export ANDROID_HOME=/path/to/android-sdk
+   export ANDROID_SDK_ROOT=/path/to/android-sdk
+
+3. 赋予执行权限：
+   chmod +x gradlew
+
+4. 执行打包命令：
+   ./gradlew assembleDebug
+
+5. APK输出位置：
+   app/build/outputs/apk/debug/app-debug.apk
+
+
+【方式二】使用Android Studio打包
+
+1. 用Android Studio打开项目
+2. 点击菜单 Build -> Build Bundle(s) / APK(s) -> Build APK(s)
+3. 等待构建完成
+4. 点击通知栏的"locate"链接找到APK文件
+
+
+【方式三】打包Release版本（需要签名）
+
+1. 生成签名密钥：
+   keytool -genkey -v -keystore chatbox.keystore -alias chatbox -keyalg RSA -keysize 2048 -validity 10000
+
+2. 在app/build.gradle中配置签名：
+   android {
+       signingConfigs {
+           release {
+               storeFile file('chatbox.keystore')
+               storePassword 'your_password'
+               keyAlias 'chatbox'
+               keyPassword 'your_password'
+           }
+       }
+       buildTypes {
+           release {
+               signingConfig signingConfigs.release
+               minifyEnabled true
+               proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+           }
+       }
+   }
+
+3. 执行打包命令：
+   ./gradlew assembleRelease
+
+4. Release APK位置：
+   app/build/outputs/apk/release/app-release.apk
+
+三、常见问题
+--------------------------------------------------------------------------------
+
+Q: 提示"SDK location not found"
+A: 在项目根目录创建local.properties文件，添加：
+   sdk.dir=/path/to/android-sdk
+
+Q: 提示"License for package Android SDK Build-Tools not accepted"
+A: 运行以下命令接受许可：
+   sdkmanager --licenses
+
+Q: 编译报错"Cannot find symbol"
+A: 尝试清理项目：
+   ./gradlew clean
+   ./gradlew assembleDebug
+
+Q: 内存不足错误
+A: 增加Gradle内存，在gradle.properties中添加：
+   org.gradle.jvmargs=-Xmx4096m
+
+四、项目结构
+--------------------------------------------------------------------------------
+testfor2/
+├── app/
+│   ├── src/main/
+│   │   ├── java/com/chatbox/app/
+│   │   │   ├── ui/activities/          # Activity界面
+│   │   │   ├── ui/adapters/            # 列表适配器
+│   │   │   ├── ui/viewmodels/          # ViewModel
+│   │   │   ├── data/entity/            # 数据实体
+│   │   │   ├── data/repository/        # 数据仓库
+│   │   │   ├── network/                # 网络请求
+│   │   │   └── utils/search/           # 关键词检索模块
+│   │   ├── res/                        # 资源文件
+│   │   └── AndroidManifest.xml
+│   └── build.gradle                    # 模块构建配置
+├── gradle/                             # Gradle包装器
+├── build.gradle                        # 项目构建配置
+├── settings.gradle                     # 项目设置
+└── gradlew                             # Gradle执行脚本
+
+五、关键词检索功能说明
+--------------------------------------------------------------------------------
+1. Aho-Corasick算法：高效多关键词匹配
+2. 并发检索：支持多线程并发搜索
+3. 编码检测：自动检测UTF-8/GBK/GB2312等编码
+4. 本地存储：记住关键词历史和搜索选项
+5. 导出功能：支持TXT/CSV/Markdown格式
+6. 长按复制：复制原句（无高亮、无注释）
+
+六、联系方式
+--------------------------------------------------------------------------------
+GitHub: https://github.com/UnkownWorld/testfor5
+
+================================================================================
+                              版本: 1.0.0
+                            更新日期: 2026-02-25
+================================================================================
